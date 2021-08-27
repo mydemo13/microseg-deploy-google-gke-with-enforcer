@@ -27,6 +27,12 @@ resource "google_container_cluster" "gke" {
     }
   }
 
+  # Create a VPC-native cluster
+  ip_allocation_policy {
+    cluster_ipv4_cidr_block  = "/16"
+    services_ipv4_cidr_block = "/22"
+  }
+
   master_auth {
     client_certificate_config {
       issue_client_certificate = false
