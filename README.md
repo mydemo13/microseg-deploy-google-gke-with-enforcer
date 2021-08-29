@@ -62,7 +62,7 @@ These Terraform templates will deploy a Google GKE cluster with Enforcer install
 
 ### Retrieving the kubeconfig file to run kubectl commands
 1. run the following commands:
-    - export KUBECONFIG="./kubeconfig"
+    - export KUBECONFIG="$PWD/kubeconfig"
     - run the get_kubeconfig_command (gcloud container clusters get-credentials ...) which you noted down earlier
 
 2. Run "kubectl get all -n aporeto" to list the microsegmentation pods and service.
